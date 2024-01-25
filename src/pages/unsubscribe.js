@@ -7,11 +7,11 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 
-export default function Home() {
+export default function Unsubscribe() {
   const [email, setEmail] = useState('');
   const [emailAdded, setEmailAdded] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
-  const url_api = 'https://api.cafenews.com.br/subscribe';
+  const url_api = 'https://api.cafenews.com.br/unsubscribe';
 
   const handleEmailAdd = async () => {
     if (email.trim() === '') {
@@ -19,7 +19,7 @@ export default function Home() {
       return;
     }
     try {
-      const response = await axios.post(url_api, { email }, {
+      const response = await axios.delete(url_api, { email }, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -65,7 +65,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="relative drop-shadow-md self-center"
               >
-                <Image alt="Coffe image" src="/coffe-newsletter.svg" width={200} height={100} />
+            <Image alt="Coffe image" src="/coffe-newsletter-unsub.svg" width={220} height={100} />
               </motion.div>
               <h1 className="font-bold text-xl mt-3 text-center">Café Newsletter</h1>
               <Input
@@ -80,11 +80,8 @@ export default function Home() {
               />
               {isEmpty && <p className="text-red-500 mt-2">O campo de e-mail não pode estar vazio.</p>}
               <Button className="mt-3 w-full" onClick={handleEmailAdd}>
-                Inscrever-se (Grátis)
+                Cancelar inscrição
               </Button>
-              <p className="mt-8 text-center">
-                Às 09:09 da manhã, você fica por dentro das notícias techs mais relevantes enquanto toma seu cafézinho.
-              </p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -98,7 +95,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="mt-8 text-center"
             >
-              Parabéns! Seu email foi adicionado.
+              😞 Que pena, fizemos o nosso melhor! <br/>
+              Seu e-mail foi desativado...
             </motion.p>
           )}
         </AnimatePresence>
