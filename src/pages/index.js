@@ -83,7 +83,7 @@ export default function Home() {
                 Inscrever-se (Grátis)
               </Button>
               <p className="mt-8 text-center">
-                Às 09:09 da manhã, você fica por dentro das notícias techs mais relevantes enquanto toma seu cafézinho.
+                Às 09:09, atualize-se sobre inteligência artificial e tecnologia durante o cafézinho.
               </p>
             </motion.div>
           )}
