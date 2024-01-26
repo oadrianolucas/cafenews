@@ -47,7 +47,7 @@ export default function Unsubscribe() {
   return (
     <div className="bg-gray-200">
       <ToastContainer />
-      <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <main className="flex min-h-screen flex-col items-center justify-center p-14">
         <AnimatePresence initial={false}>
           {!emailAdded && (
             <motion.div

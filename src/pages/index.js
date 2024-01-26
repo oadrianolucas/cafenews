@@ -98,7 +98,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="mt-8 text-center"
             >
-              Parabéns! Seu email foi adicionado.
+              Parabéns! Seu email foi adicionado com sucesso 🎉.
             </motion.p>
           )}
         </AnimatePresence>
