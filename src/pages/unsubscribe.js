@@ -19,7 +19,7 @@ export default function Unsubscribe() {
       return;
     }
     try {
-      const response = await axios.delete(url_api, { email }, {
+      const response = await axios.put(url_api, { email }, {
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
